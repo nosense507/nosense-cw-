@@ -1,0 +1,33 @@
+#include <stdio.h>
+char* strcpy(char *strDest, const char* strSrc)
+{
+    char *p=NULL;
+    if(strDest == NULL || strSrc == NULL)
+    {
+        return NULL;
+    }
+    p = strDest;
+    while((*strDest++ = *strSrc ++) != '\0');
+    return p;
+}
+int getStrLen(const char* str)
+{
+    int len = 0;
+    while( *str ++ != '\0')
+    {
+        len ++;
+    }
+    return len;
+}
+int main()
+{
+    char str[] = "abcde";
+    char strDest[20] = {0};
+    int len = 0;
+ 
+ 
+    len = getStrLen(strcpy(strDest, str));
+    printf("str=%s, len=%d\n", strDest,len);
+    getchar();
+    return 1;
+}
